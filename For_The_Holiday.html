@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dad's Bali Action List</title>
+    <style>
+        :root {
+            --bg-body: #060913;
+            --text-main: #f3f4f6;
+            --text-heading: #ffffff;
+            --bg-card: #0f172a;
+            --border-card: #1e293b;
+            --text-accent: #38bdf8;
+            --text-desc: #94a3b8;
+            --text-note: #64748b;
+            --card-hover-bg: #1e293b;
+            --shadow-accent: rgba(56, 189, 248, 0.15);
+        }
+
+        body.light-theme {
+            --bg-body: #f8fafc;
+            --text-main: #1e293b;
+            --text-heading: #0f172a;
+            --bg-card: #ffffff;
+            --border-card: #e2e8f0;
+            --text-accent: #0284c7;
+            --text-desc: #475569;
+            --text-note: #64748b;
+            --card-hover-bg: #f1f5f9;
+            --shadow-accent: rgba(2, 132, 199, 0.08);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 0 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 35px;
+            border-left: 4px solid var(--text-accent);
+            padding-left: 16px;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin: 0 0 6px 0;
+            color: var(--text-heading);
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--text-accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 0 0 10px 0;
+        }
+
+        .preference-note {
+            font-size: 0.88rem;
+            color: var(--text-note);
+            line-height: 1.4;
+            margin: 0;
+            max-width: 420px;
+        }
+
+        .theme-btn {
+            background: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--border-card);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .theme-btn:hover {
+            border-color: var(--text-accent);
+            transform: translateY(-1px);
+        }
+
+        .activity {
+            margin-bottom: 20px;
+            padding: 24px;
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-card);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .activity:hover {
+            transform: translateY(-3px) scale(1.01);
+            border-color: var(--text-accent);
+            background-color: var(--card-hover-bg);
+            box-shadow: 0 10px 20px var(--shadow-accent);
+        }
+
+        .title-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-accent);
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 12px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--text-accent);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        body.light-theme .badge {
+            background: rgba(2, 132, 199, 0.08);
+            border-color: rgba(2, 132, 199, 0.15);
+        }
+
+        .desc {
+            font-size: 0.95rem;
+            color: var(--text-desc);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <div>
+            <h1>High-Speed Bali Track List</h1>
+            <p class="subtitle">Custom Route Guide for Dad</p>
+            <p class="preference-note">⚡ Hey Dad, I set this up because I prefer having fewer people around and way more freedom to go fast.</p>
+        </div>
+        <button class="theme-btn" id="themeToggle" onclick="toggleTheme()">⚡ Light Mode</button>
+    </div>
+
+    <div class="activity">
+        <div class="title-row">
+            <div class="title">ATV Riding</div>
+            <div class="badge">No Lines</div>
+        </div>
+        <div class="desc">Empty desert coastlines and wide-open muddy plains. Built for maximum speed without single-file tourist lines or group pace limits.</div>
+    </div>
+
+    <div class="activity">
+        <div class="title-row">
+            <div class="title">Dirtbike Riding</div>
+            <div class="badge">Open Terrain</div>
+        </div>
+        <div class="desc">Deep forest tracks and open mountain trails. Low crowd zones with expansive, flat terrain to ride completely freely.</div>
+    </div>
+
+    <div class="activity">
+        <div class="title-row">
+            <div class="title">Jetski Riding</div>
+            <div class="badge">Offshore</div>
+        </div>
+        <div class="desc">Deep open-ocean corridors and coastal swells. Unlimited space away from restricted beach boundaries and tourist crowds.</div>
+    </div>
+
+    <div class="activity">
+        <div class="title-row">
+            <div class="title">UTV Driving</div>
+            <div class="badge">Full Throttle</div>
+        </div>
+        <div class="desc">High-horsepower off-road buggies on massive, wide quarry tracks. Plenty of room to slide and accelerate with full throttle control.</div>
+    </div>
+
+    <div class="activity">
+        <div class="title-row">
+            <div class="title">Wakeboarding</div>
+            <div class="badge">Max Speed</div>
+        </div>
+        <div class="desc">Open-water cable tracks and calm deep-water lanes. Unobstructed runs to carve hard and maintain high speeds.</div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.getElementById('themeToggle');
+            body.classList.toggle('light-theme');
+            
+            if (body.classList.contains('light-theme')) {
+                btn.textContent = '🌙 Dark Mode';
+            } else {
+                btn.textContent = '⚡ Light Mode';
+            }
+        }
+    </script>
+</body>
+</html>
